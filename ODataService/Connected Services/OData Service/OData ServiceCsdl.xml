@@ -1,0 +1,1208 @@
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="SmartSearch.OpenApi.Models" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="JobApplicantResponse">
+        <Key>
+          <PropertyRef Name="idNum" />
+        </Key>
+        <Property Name="idNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="applicationDate" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="statusCode" Type="Edm.String" />
+        <Property Name="statusMessage" Type="Edm.String" />
+        <Property Name="statusDate" Type="Edm.DateTimeOffset" />
+        <NavigationProperty Name="job" Type="SmartSearch.OpenApi.Models.JobResponse" Nullable="false" />
+        <NavigationProperty Name="candidate" Type="SmartSearch.OpenApi.Models.CandidateResponse" Nullable="false" />
+      </EntityType>
+      <EntityType Name="BusinessResponse">
+        <Key>
+          <PropertyRef Name="businessNum" />
+        </Key>
+        <Property Name="businessNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="businessName" Type="Edm.String" />
+        <Property Name="division" Type="Edm.String" />
+        <Property Name="address1" Type="Edm.String" />
+        <Property Name="address2" Type="Edm.String" />
+        <Property Name="city" Type="Edm.String" />
+        <Property Name="state" Type="Edm.String" />
+        <Property Name="country" Type="Edm.String" />
+        <Property Name="zipCode" Type="Edm.String" />
+        <Property Name="alternateAddress1" Type="Edm.String" />
+        <Property Name="alternateAddress2" Type="Edm.String" />
+        <Property Name="alternateCity" Type="Edm.String" />
+        <Property Name="alternateState" Type="Edm.String" />
+        <Property Name="alternateCountry" Type="Edm.String" />
+        <Property Name="alternatePostalCode" Type="Edm.String" />
+        <Property Name="phone" Type="Edm.String" />
+        <Property Name="fax" Type="Edm.String" />
+        <Property Name="url" Type="Edm.String" />
+        <Property Name="keywords" Type="Edm.String" />
+        <Property Name="statusCode" Type="Edm.String" />
+        <Property Name="branchDesc" Type="Edm.String" />
+        <Property Name="groupDesc" Type="Edm.String" />
+        <Property Name="userName" Type="Edm.String" />
+        <Property Name="sourceCode" Type="Edm.String" />
+        <Property Name="sourceDesc" Type="Edm.String" />
+        <Property Name="statusDesc" Type="Edm.String" />
+        <Property Name="businessId" Type="Edm.String" />
+        <Property Name="enteredDate" Type="Edm.DateTimeOffset" />
+        <Property Name="address3" Type="Edm.String" />
+        <Property Name="alternateZip" Type="Edm.String" />
+        <Property Name="alternatePhone" Type="Edm.String" />
+        <Property Name="alternateFax" Type="Edm.String" />
+        <Property Name="email" Type="Edm.String" />
+        <Property Name="createdDate" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="latitude" Type="Edm.Double" />
+        <Property Name="longitude" Type="Edm.Double" />
+        <Property Name="industryCode" Type="Edm.String" />
+        <Property Name="industryDesc" Type="Edm.String" />
+        <Property Name="sicCode" Type="Edm.String" />
+        <Property Name="parentBusinessNum" Type="Edm.Int32" />
+        <Property Name="isParent" Type="Edm.Int32" />
+        <Property Name="excludeBusinessBroadcast" Type="Edm.Int32" />
+        <Property Name="defaultMarkUp" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="defaultHireType" Type="Edm.String" />
+        <Property Name="defaultOvertime" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="defaultDoubleTime" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="allowCandidateSearch" Type="Edm.String" />
+        <Property Name="allowCandidateKeywordSearch" Type="Edm.String" />
+        <Property Name="allowCandidateFiling" Type="Edm.String" />
+        <Property Name="resumeSearchName" Type="Edm.String" />
+        <Property Name="firstDayOfWeek" Type="Edm.Int32" />
+        <Property Name="hoursRounding" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="groupNum" Type="Edm.Int32" />
+        <Property Name="siteNum" Type="Edm.Int32" />
+      </EntityType>
+      <EntityType Name="CallListResponse">
+        <Key>
+          <PropertyRef Name="callNum" />
+        </Key>
+        <Property Name="callNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="entityType" Type="SmartSearch.Core.Enumerations.EntityType" Nullable="false" />
+        <Property Name="entityId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="priority" Type="Edm.String" />
+        <Property Name="dueDate" Type="Edm.DateTimeOffset" />
+        <Property Name="reason" Type="Edm.String" />
+        <Property Name="createdTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="completedTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="category" Type="Edm.String" />
+        <Property Name="callType" Type="Edm.String" />
+        <Property Name="secondaryCallType" Type="Edm.String" />
+        <Property Name="dayOfMonth" Type="Edm.Byte" />
+        <Property Name="days" Type="Edm.String" />
+        <Property Name="months" Type="Edm.String" />
+        <Property Name="callee" Type="Edm.String" />
+        <Property Name="calleeCell" Type="Edm.String" />
+        <Property Name="linkedNoteNum" Type="Edm.Int32" />
+        <Property Name="linkedFolderNum" Type="Edm.Int32" />
+      </EntityType>
+      <EntityType Name="CandidateResponse">
+        <Key>
+          <PropertyRef Name="candidateNum" />
+        </Key>
+        <Property Name="candidateNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="resumeNum" Type="Edm.Int32" />
+        <Property Name="ownerFirstName" Type="Edm.String" />
+        <Property Name="ownerLastName" Type="Edm.String" />
+        <Property Name="siteNum" Type="Edm.Int32" />
+        <Property Name="branchName" Type="Edm.String" />
+        <Property Name="groupNum" Type="Edm.Int32" />
+        <Property Name="groupName" Type="Edm.String" />
+        <Property Name="employeeId" Type="Edm.String" />
+        <Property Name="candidateType" Type="Edm.String" />
+        <Property Name="typeName" Type="Edm.String" />
+        <Property Name="sourceCode" Type="Edm.String" />
+        <Property Name="sourceName" Type="Edm.String" />
+        <Property Name="subSourceCode" Type="Edm.String" />
+        <Property Name="subSourceName" Type="Edm.String" />
+        <Property Name="createdDate" Type="Edm.DateTimeOffset" />
+        <Property Name="lastContactDate" Type="Edm.DateTimeOffset" />
+        <Property Name="availableDate" Type="Edm.DateTimeOffset" />
+        <Property Name="securityClearanceCode" Type="Edm.String" />
+        <Property Name="securityClearanceDesc" Type="Edm.String" />
+        <Property Name="candidateNamePrefix" Type="Edm.String" />
+        <Property Name="candidateLastName" Type="Edm.String" />
+        <Property Name="candidateFirstName" Type="Edm.String" />
+        <Property Name="candidateMiddleName" Type="Edm.String" />
+        <Property Name="candidateNickName" Type="Edm.String" />
+        <Property Name="candidateTitle" Type="Edm.String" />
+        <Property Name="candidateAddress1" Type="Edm.String" />
+        <Property Name="candidateAddress2" Type="Edm.String" />
+        <Property Name="candidateCity" Type="Edm.String" />
+        <Property Name="candidateState" Type="Edm.String" />
+        <Property Name="candidatePostalCode" Type="Edm.String" />
+        <Property Name="candidateCountry" Type="Edm.String" />
+        <Property Name="candidateHomePhone" Type="Edm.String" />
+        <Property Name="candidateFax" Type="Edm.String" />
+        <Property Name="candidateWorkPhone" Type="Edm.String" />
+        <Property Name="candidateCellPhone" Type="Edm.String" />
+        <Property Name="candidateSSN" Type="Edm.String" />
+        <Property Name="dateOfBirth" Type="Edm.DateTimeOffset" />
+        <Property Name="gender" Type="Edm.String" />
+        <Property Name="maritalStatus" Type="SmartSearch.OpenApi.Enums.MaritalStatusType" />
+        <Property Name="eeoRaceCode" Type="Edm.String" />
+        <Property Name="eeoRaceDescription" Type="Edm.String" />
+        <Property Name="preOfferIsVet" Type="Edm.String" />
+        <Property Name="postOfferIsVet" Type="Edm.String" />
+        <Property Name="qualifiedDisabled" Type="Edm.String" />
+        <Property Name="highestDegreeCode" Type="Edm.String" />
+        <Property Name="degreeDescription" Type="Edm.String" />
+        <Property Name="degreeMajor" Type="Edm.String" />
+        <Property Name="gpa" Type="Edm.Double" />
+        <Property Name="degreeGraduationYear" Type="Edm.Int16" />
+        <Property Name="highestDegreeLevel" Type="Edm.String" />
+        <Property Name="degreeSchoolName" Type="Edm.String" />
+        <Property Name="alternateAddress1" Type="Edm.String" />
+        <Property Name="alternateAddress2" Type="Edm.String" />
+        <Property Name="alternateCity" Type="Edm.String" />
+        <Property Name="alternateState" Type="Edm.String" />
+        <Property Name="alternatePostalCode" Type="Edm.String" />
+        <Property Name="alternateCountry" Type="Edm.String" />
+        <Property Name="candidateStatusCode" Type="Edm.String" />
+        <Property Name="candidateStatusDesc" Type="Edm.String" />
+        <Property Name="monDesiredShift" Type="Edm.Int32" />
+        <Property Name="tueDesiredShift" Type="Edm.Int32" />
+        <Property Name="wedDesiredShift" Type="Edm.Int32" />
+        <Property Name="thuDesiredShift" Type="Edm.Int32" />
+        <Property Name="friDesiredShift" Type="Edm.Int32" />
+        <Property Name="satDesiredShift" Type="Edm.Int32" />
+        <Property Name="sunDesiredShift" Type="Edm.Int32" />
+        <Property Name="lastSalaryRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="requiredSalaryRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="willingToTravel" Type="Edm.Int16" />
+        <Property Name="willingToRelocate" Type="Edm.Int16" />
+        <Property Name="candidateRating" Type="Edm.Int16" />
+        <Property Name="available1stShift" Type="Edm.Int16" />
+        <Property Name="available2ndShift" Type="Edm.Int16" />
+        <Property Name="available3rdShift" Type="Edm.Int16" />
+        <Property Name="availableShortNotice" Type="Edm.Int16" />
+        <Property Name="yearsExperience" Type="Edm.Int16" />
+        <Property Name="creationDateTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="createdByUserNum" Type="Edm.Int32" />
+        <Property Name="modifiedDateTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedUserNum" Type="Edm.Int32" />
+        <Property Name="primaryEmail" Type="Edm.String" />
+        <Property Name="alternateEmail" Type="Edm.String" />
+        <Property Name="referredCandidateId" Type="Edm.Int32" />
+        <Property Name="vendorNumber" Type="Edm.Int32" />
+        <Property Name="emailOptOut" Type="Edm.Int32" />
+        <Property Name="vendorContactNumber" Type="Edm.Int32" />
+        <Property Name="securityClearanceDate" Type="Edm.DateTimeOffset" />
+        <Property Name="securityClearanceVerifiedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="isFelon" Type="Edm.String" />
+        <Property Name="dateOfFelony" Type="Edm.DateTimeOffset" />
+        <Property Name="felonyComments" Type="Edm.String" />
+        <Property Name="federalMaritalFilingStatus" Type="SmartSearch.OpenApi.Enums.MaritalStatusType" />
+        <Property Name="federalTaxExemptions" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="stateExemptions" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="paycheckMethod" Type="Edm.Int32" />
+        <Property Name="paycheckBranchNum" Type="Edm.Int32" />
+        <Property Name="i9TypeNum" Type="Edm.Int32" />
+        <Property Name="nationality1" Type="Edm.Int32" />
+        <Property Name="nationality2" Type="Edm.Int32" />
+        <Property Name="i9VerifyMethod" Type="Edm.Int32" />
+        <Property Name="skypeAddress" Type="Edm.String" />
+        <Property Name="url" Type="Edm.String" />
+        <Property Name="federalAdditionalWithholdingAmount" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="stateAdditionalWithholdingAmount" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="preferredContactMethod" Type="Edm.String" />
+        <Property Name="allowTextMessaging" Type="Edm.String" />
+        <Property Name="sourcerUserNum" Type="Edm.Int32" />
+        <Property Name="emergencyContact1Name" Type="Edm.String" />
+        <Property Name="emergencyContact1Phone" Type="Edm.String" />
+        <Property Name="emergencyContact1Relationship" Type="Edm.String" />
+        <Property Name="emergencyContact1Email" Type="Edm.String" />
+        <Property Name="emergencyContact1Address1" Type="Edm.String" />
+        <Property Name="emergencyContact1City" Type="Edm.String" />
+        <Property Name="emergencyContact1State" Type="Edm.String" />
+        <Property Name="emergencyContact1Country" Type="Edm.String" />
+        <Property Name="emergencyContact1PostalCode" Type="Edm.String" />
+        <Property Name="emergencyContact1CellPhone" Type="Edm.String" />
+        <Property Name="emergencyContact2Name" Type="Edm.String" />
+        <Property Name="emergencyContact2Phone" Type="Edm.String" />
+        <Property Name="emergencyContact2Relationship" Type="Edm.String" />
+        <Property Name="emergencyContact2Email" Type="Edm.String" />
+        <Property Name="emergencyContact2Address1" Type="Edm.String" />
+        <Property Name="emergencyContact2City" Type="Edm.String" />
+        <Property Name="emergencyContact2State" Type="Edm.String" />
+        <Property Name="emergencyContact2Country" Type="Edm.String" />
+        <Property Name="emergencyContact2PostalCode" Type="Edm.String" />
+        <Property Name="emergencyContact2CellPhone" Type="Edm.String" />
+        <Property Name="fedExemptFiling" Type="Edm.Int32" />
+        <Property Name="stateExemptFiling" Type="Edm.Int32" />
+        <Property Name="driversLicenseNum" Type="Edm.String" />
+        <Property Name="driverLicenseState" Type="Edm.String" />
+        <Property Name="driversLicenseExpire" Type="Edm.DateTimeOffset" />
+        <Property Name="maidenName" Type="Edm.String" />
+        <Property Name="directDeposit1AccountNum" Type="Edm.String" />
+        <Property Name="directDeposit2AccountNum" Type="Edm.String" />
+        <Property Name="directDeposit1Amount" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="directDeposit2Amount" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="directDeposit1BankName" Type="Edm.String" />
+        <Property Name="directDeposit2BankName" Type="Edm.String" />
+        <Property Name="directDeposit1Type" Type="Edm.String" />
+        <Property Name="directDeposit2Type" Type="Edm.String" />
+        <Property Name="directDeposit1Routing" Type="Edm.String" />
+        <Property Name="directDeposit2Routing" Type="Edm.String" />
+        <Property Name="gdprConsentDate" Type="Edm.DateTimeOffset" />
+        <Property Name="gdprConsentExpireDate" Type="Edm.DateTimeOffset" />
+        <Property Name="isEuCitizen" Type="Edm.String" />
+        <Property Name="candidatePostOfferDisability" Type="Edm.String" />
+        <Property Name="federalOtherJob" Type="Edm.String" />
+        <Property Name="federalOtherIncome" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="federalOtherDeductions" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hubspotId" Type="Edm.String" />
+        <Property Name="covidBooster" Type="Edm.String" />
+        <Property Name="covidVaccinationDate" Type="Edm.DateTimeOffset" />
+        <Property Name="covidBoosterDate" Type="Edm.DateTimeOffset" />
+        <Property Name="covidVaccineType" Type="Edm.String" />
+        <Property Name="covidVaccineUserNum" Type="Edm.Int32" />
+        <Property Name="covidVaccineDate2" Type="Edm.DateTimeOffset" />
+        <Property Name="covidCardValid" Type="Edm.String" />
+        <Property Name="covidCardVerifiedBy" Type="Edm.Int32" />
+      </EntityType>
+      <EntityType Name="CandidateTrakActionResponse">
+        <Key>
+          <PropertyRef Name="actionNum" />
+        </Key>
+        <Property Name="actionNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="actionCode" Type="Edm.String" />
+        <Property Name="actionDate" Type="Edm.DateTimeOffset" />
+        <Property Name="comments" Type="Edm.String" />
+        <Property Name="recruiterNum" Type="Edm.Int32" />
+        <Property Name="recruiterFirstName" Type="Edm.String" />
+        <Property Name="recruiterLastName" Type="Edm.String" />
+        <Property Name="candidateNum" Type="Edm.Int32" />
+        <Property Name="candidateFirstName" Type="Edm.String" />
+        <Property Name="candidateLastName" Type="Edm.String" />
+        <Property Name="candidateMiddleInitial" Type="Edm.String" />
+        <Property Name="candidateEmail" Type="Edm.String" />
+        <Property Name="employeeId" Type="Edm.String" />
+        <Property Name="createdTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedTimestamp" Type="Edm.DateTimeOffset" />
+      </EntityType>
+      <EntityType Name="ContactResponse">
+        <Key>
+          <PropertyRef Name="contactNum" />
+        </Key>
+        <Property Name="contactNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="businessNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="businessName" Type="Edm.String" />
+        <Property Name="businessDivision" Type="Edm.String" />
+        <Property Name="businessUrl" Type="Edm.String" />
+        <Property Name="lastName" Type="Edm.String" />
+        <Property Name="firstName" Type="Edm.String" />
+        <Property Name="address1" Type="Edm.String" />
+        <Property Name="address2" Type="Edm.String" />
+        <Property Name="city" Type="Edm.String" />
+        <Property Name="state" Type="Edm.String" />
+        <Property Name="zipCode" Type="Edm.String" />
+        <Property Name="country" Type="Edm.String" />
+        <Property Name="phone" Type="Edm.String" />
+        <Property Name="fax" Type="Edm.String" />
+        <Property Name="cellPhone" Type="Edm.String" />
+        <Property Name="keywords" Type="Edm.String" />
+        <Property Name="statusCode" Type="Edm.String" />
+        <Property Name="branchDesc" Type="Edm.String" />
+        <Property Name="groupDesc" Type="Edm.String" />
+        <Property Name="userName" Type="Edm.String" />
+        <Property Name="sourceCode" Type="Edm.String" />
+        <Property Name="sourceDesc" Type="Edm.String" />
+        <Property Name="statusDesc" Type="Edm.String" />
+        <Property Name="mi" Type="Edm.String" />
+        <Property Name="title" Type="Edm.String" />
+        <Property Name="postcode" Type="Edm.String" />
+        <Property Name="secretaryName" Type="Edm.String" />
+        <Property Name="secretaryPhone" Type="Edm.String" />
+        <Property Name="lastContact" Type="Edm.DateTimeOffset" />
+        <Property Name="email" Type="Edm.String" />
+        <Property Name="createdDate" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedBy" Type="Edm.Int32" />
+        <Property Name="latitude" Type="Edm.Double" />
+        <Property Name="longitude" Type="Edm.Double" />
+        <Property Name="canApprove" Type="Edm.Int32" />
+        <Property Name="excludeBroadcast" Type="Edm.Int32" />
+        <Property Name="mayApprovePOs" Type="Edm.String" />
+        <Property Name="skype" Type="Edm.String" />
+        <Property Name="reportsToNum" Type="Edm.Int32" />
+        <Property Name="secretaryEmail" Type="Edm.String" />
+        <Property Name="allowCandidateSearch" Type="Edm.String" />
+        <Property Name="allowCandidateKeywordSearch" Type="Edm.String" />
+        <Property Name="allowCandidateFile" Type="Edm.String" />
+        <Property Name="resumeSearchName" Type="Edm.String" />
+        <Property Name="preferredContactMethod" Type="Edm.String" />
+        <Property Name="allowText" Type="Edm.String" />
+        <Property Name="bestCallTime" Type="Edm.String" />
+        <Property Name="alternativeEmail" Type="Edm.String" />
+        <Property Name="textOptOut" Type="Edm.String" />
+        <Property Name="firstLoginDate" Type="Edm.DateTimeOffset" />
+        <Property Name="gdprConsentDate" Type="Edm.DateTimeOffset" />
+        <Property Name="gdprConsentExpiredate" Type="Edm.DateTimeOffset" />
+        <Property Name="isEuCitizen" Type="Edm.String" />
+        <Property Name="hubspotId" Type="Edm.String" />
+        <Property Name="groupNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="siteNum" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="CustomFieldResponse">
+        <Key>
+          <PropertyRef Name="customFieldNum" />
+        </Key>
+        <Property Name="customFieldNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="category" Type="Edm.Byte" />
+        <Property Name="enabled" Type="Edm.Boolean" />
+        <Property Name="displayText" Type="Edm.String" />
+        <Property Name="fieldType" Type="SmartSearch.OpenApi.Enums.FieldType" Nullable="false" />
+        <Property Name="format" Type="SmartSearch.OpenApi.Enums.FieldFormat" />
+        <Property Name="answerType" Type="SmartSearch.OpenApi.Enums.AnswerType" />
+        <Property Name="sortOrderNum" Type="Edm.Int32" />
+        <Property Name="createdDate" Type="Edm.DateTimeOffset" />
+        <Property Name="createdByUserNum" Type="Edm.Int32" />
+        <Property Name="groupNum" Type="Edm.Int32" />
+      </EntityType>
+      <EntityType Name="DocumentResponse">
+        <Key>
+          <PropertyRef Name="documentNum" />
+        </Key>
+        <Property Name="documentNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="entityType" Type="SmartSearch.Core.Enumerations.EntityType" />
+        <Property Name="entityId" Type="Edm.Int32" />
+        <Property Name="documentName" Type="Edm.String" />
+        <Property Name="displayName" Type="Edm.String" />
+        <Property Name="contents" Type="Edm.String" />
+        <Property Name="documentExtension" Type="Edm.String" Nullable="false" />
+        <Property Name="comments" Type="Edm.String" />
+        <Property Name="createdTimestamp" Type="Edm.DateTimeOffset" />
+      </EntityType>
+      <EntityType Name="HireResponse">
+        <Key>
+          <PropertyRef Name="assignmentNum" />
+        </Key>
+        <Property Name="assignmentNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="candidateNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="businessNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="hiringManagerNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="jobNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="jobDetailNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ownerNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="startDate" Type="Edm.DateTimeOffset" />
+        <Property Name="perDiemStartDate" Type="Edm.DateTimeOffset" />
+        <Property Name="payType" Type="Edm.String" />
+        <Property Name="dateHireWasSubmittedToAccounting" Type="Edm.DateTimeOffset" />
+        <Property Name="effectiveDate" Type="Edm.DateTimeOffset" />
+        <Property Name="standardPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="overtimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="doubleTimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="overtimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="doubleTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="perDiemPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="perDiemBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="travelPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="travelBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="createdDate" Type="Edm.DateTimeOffset" />
+        <Property Name="createdByUserNum" Type="Edm.Int32" />
+        <Property Name="modifiedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedByUserNum" Type="Edm.Int32" />
+        <Property Name="hireNoteId" Type="Edm.Int32" />
+        <Property Name="hireNote" Type="Edm.String" />
+        <Property Name="markupPercentage" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="timeMode" Type="Edm.String" />
+        <Property Name="anticipatedEndDate" Type="Edm.DateTimeOffset" />
+        <Property Name="hireType" Type="Edm.String" />
+        <Property Name="conversionFee" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="sourcingFee" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorStandardRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorOvertimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorDoubleTimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorPerDiemRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorTravelRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hireDate" Type="Edm.DateTimeOffset" />
+        <Property Name="availableRehireDate" Type="Edm.DateTimeOffset" />
+        <Property Name="poNum" Type="Edm.Int16" />
+        <Property Name="po" Type="Edm.String" />
+        <Property Name="poStartDate" Type="Edm.DateTimeOffset" />
+        <Property Name="poEndDate" Type="Edm.DateTimeOffset" />
+        <Property Name="poLimit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="govId" Type="Edm.String" />
+        <Property Name="candidateDateOfBirth" Type="Edm.DateTimeOffset" />
+        <Property Name="candidateFirstName" Type="Edm.String" />
+        <Property Name="candidateLastName" Type="Edm.String" />
+        <Property Name="candidateMiddleInitial" Type="Edm.String" />
+        <Property Name="candidateAddress1" Type="Edm.String" />
+        <Property Name="candidateAddress2" Type="Edm.String" />
+        <Property Name="candidateCity" Type="Edm.String" />
+        <Property Name="candidateState" Type="Edm.String" />
+        <Property Name="candidatePostalCode" Type="Edm.String" />
+        <Property Name="candidateCountry" Type="Edm.String" />
+        <Property Name="candidatePhone" Type="Edm.String" />
+        <Property Name="candidateCellPhone" Type="Edm.String" />
+        <Property Name="candidateEmail" Type="Edm.String" />
+        <Property Name="candidateAlternateEmail" Type="Edm.String" />
+        <Property Name="fedMaritalStatus" Type="Edm.String" />
+        <Property Name="fedFilingExemptions" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="stateMaritalStatus" Type="Edm.String" />
+        <Property Name="stateFilingExemptions" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="stateAdditionalWithholding" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="fedAdditionalWithholding" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="accountManager1Num" Type="Edm.Int32" />
+        <Property Name="accountManager1CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="accountManager2Num" Type="Edm.Int32" />
+        <Property Name="accountManager2CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="accountManager3Num" Type="Edm.Int32" />
+        <Property Name="accountManager3CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="accountManager4Num" Type="Edm.Int32" />
+        <Property Name="accountManager4CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="accountManager5Num" Type="Edm.Int32" />
+        <Property Name="accountManager5CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="recruiter1Num" Type="Edm.Int32" />
+        <Property Name="recruiter1CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="recruiter2Num" Type="Edm.Int32" />
+        <Property Name="recruiter2CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="recruiter3Num" Type="Edm.Int32" />
+        <Property Name="recruiter3CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="recruiter4Num" Type="Edm.Int32" />
+        <Property Name="recruiter4CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="recruiter5Num" Type="Edm.Int32" />
+        <Property Name="recruiter5CommissionPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="approver1UserNum" Type="Edm.Int32" />
+        <Property Name="approver1Date" Type="Edm.DateTimeOffset" />
+        <Property Name="approver2UserNum" Type="Edm.Int32" />
+        <Property Name="approver2Date" Type="Edm.DateTimeOffset" />
+        <Property Name="approver3UserNum" Type="Edm.Int32" />
+        <Property Name="approver3Date" Type="Edm.DateTimeOffset" />
+        <Property Name="approver1Message" Type="Edm.String" />
+        <Property Name="approver2Message" Type="Edm.String" />
+        <Property Name="approver3Message" Type="Edm.String" />
+        <Property Name="internalHire" Type="Edm.String" />
+        <Property Name="exemptFlag" Type="Edm.String" />
+        <Property Name="replacementFlag" Type="Edm.String" />
+        <Property Name="replacementName" Type="Edm.String" />
+        <Property Name="currencyNum" Type="Edm.Int32" />
+        <Property Name="currency" Type="Edm.String" />
+        <Property Name="timeCardApproverContactNum" Type="Edm.Int32" />
+        <Property Name="holidayStandardPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayOvertimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayDoubleTimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayStandardBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayOvertimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayDoubleTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayOvertimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayStandardBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayDoubleTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="burdenPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="allowOver8DailyOvertime" Type="Edm.String" />
+        <Property Name="allowOver40WeeklyOvertime" Type="Edm.String" />
+        <Property Name="allowOnCallDays" Type="Edm.String" />
+        <Property Name="salesTaxRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyFlatRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="allowSickDays" Type="Edm.String" />
+        <Property Name="allowPerDiemDays" Type="Edm.String" />
+        <Property Name="allowVacationDays" Type="Edm.String" />
+        <Property Name="eligibleForRehire" Type="Edm.String" />
+        <Property Name="standardVacationPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardVacationBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardOnCallPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardOnCallBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardVacationVendorRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardOnCallVendorRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="estimatedHoursPerWeek" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="jobLengthInWeeks" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="isApproved" Type="Edm.String" />
+        <Property Name="estimatedTotalHours" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="billPeriod" Type="Edm.String" />
+        <Property Name="hourlyOrderValueOfPlacement" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyOrderValueOfPlacement" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalOrderValueOfPlacement" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyCostOfWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyCostOfWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalCostOfWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyOtherCosts" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyOtherCosts" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalOtherCosts" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="rateEffectiveDate" Type="Edm.DateTimeOffset" />
+        <Property Name="over12Doubletime" Type="Edm.String" />
+        <Property Name="paymentReceivedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="invoiceSentDate" Type="Edm.DateTimeOffset" />
+        <Property Name="workSiteNumber" Type="Edm.Int32" />
+        <Property Name="workSiteAddress1" Type="Edm.String" />
+        <Property Name="workSiteAddress2" Type="Edm.String" />
+        <Property Name="workSiteCity" Type="Edm.String" />
+        <Property Name="workSiteState" Type="Edm.String" />
+        <Property Name="workSitePostalCode" Type="Edm.String" />
+        <Property Name="workSiteCountry" Type="Edm.String" />
+        <Property Name="jobTitle" Type="Edm.String" />
+        <Property Name="jobReferenceId" Type="Edm.String" />
+        <Property Name="businessName" Type="Edm.String" />
+        <Property Name="contactFirstName" Type="Edm.String" />
+        <Property Name="contactLastName" Type="Edm.String" />
+        <Property Name="contactTitle" Type="Edm.String" />
+        <Property Name="recruitedByFirstName" Type="Edm.String" />
+        <Property Name="recruitedByLastName" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="TrakActionResponse">
+        <Key>
+          <PropertyRef Name="actionNum" />
+        </Key>
+        <Property Name="actionNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="actionCode" Type="Edm.String" />
+        <Property Name="actionName" Type="Edm.String" />
+        <Property Name="actionDate" Type="Edm.DateTimeOffset" />
+        <Property Name="jobNum" Type="Edm.Int32" />
+        <Property Name="jobDetailNum" Type="Edm.Int32" />
+        <Property Name="jobTitle" Type="Edm.String" />
+        <Property Name="jobStatus" Type="Edm.String" />
+        <Property Name="jobOpenDate" Type="Edm.DateTimeOffset" />
+        <Property Name="jobCloseDate" Type="Edm.DateTimeOffset" />
+        <Property Name="wasHired" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="comments" Type="Edm.String" />
+        <Property Name="recruiterNum" Type="Edm.Int32" />
+        <Property Name="recruiterFirstName" Type="Edm.String" />
+        <Property Name="recruiterLastName" Type="Edm.String" />
+        <Property Name="firstInterviewerName" Type="Edm.String" />
+        <Property Name="secondInterviewerName" Type="Edm.String" />
+        <Property Name="businessNum" Type="Edm.Int32" />
+        <Property Name="contactNum" Type="Edm.Int32" />
+        <Property Name="contactFirstName" Type="Edm.String" />
+        <Property Name="contactLastName" Type="Edm.String" />
+        <Property Name="candidateNum" Type="Edm.Int32" />
+        <Property Name="candidateFirstName" Type="Edm.String" />
+        <Property Name="candidateLastName" Type="Edm.String" />
+        <Property Name="candidateMiddleInitial" Type="Edm.String" />
+        <Property Name="candidateEmail" Type="Edm.String" />
+        <Property Name="employeeId" Type="Edm.String" />
+        <Property Name="terminationReason" Type="Edm.String" />
+        <Property Name="currencyNum" Type="Edm.Int32" />
+        <Property Name="actionAddress1" Type="Edm.String" />
+        <Property Name="actionAddress2" Type="Edm.String" />
+        <Property Name="actionCity" Type="Edm.String" />
+        <Property Name="actionState" Type="Edm.String" />
+        <Property Name="actionZipCode" Type="Edm.String" />
+        <Property Name="actionCountry" Type="Edm.String" />
+        <Property Name="createdTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedTimestamp" Type="Edm.DateTimeOffset" />
+      </EntityType>
+      <EntityType Name="JobResponse">
+        <Key>
+          <PropertyRef Name="jobNum" />
+        </Key>
+        <Property Name="jobNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="businessName" Type="Edm.String" />
+        <Property Name="contactFirstName" Type="Edm.String" />
+        <Property Name="contactLastName" Type="Edm.String" />
+        <Property Name="jobTitle" Type="Edm.String" />
+        <Property Name="jobTypeCode" Type="Edm.String" />
+        <Property Name="recruiterNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="recruiterFirstName" Type="Edm.String" />
+        <Property Name="recruiterLastName" Type="Edm.String" />
+        <Property Name="jobDescription" Type="Edm.String" />
+        <Property Name="jobRequirements" Type="Edm.String" />
+        <Property Name="internalDescription" Type="Edm.String" />
+        <Property Name="workAreaCode" Type="Edm.Int32" />
+        <Property Name="workPostalCode" Type="Edm.String" />
+        <Property Name="workCountry" Type="Edm.String" />
+        <Property Name="workState" Type="Edm.String" />
+        <Property Name="workCity" Type="Edm.String" />
+        <Property Name="neededBy" Type="Edm.DateTimeOffset" />
+        <Property Name="numberOfPositions" Type="Edm.Int16" />
+        <Property Name="assignmentDuration" Type="Edm.String" />
+        <Property Name="requiredDegreeCode" Type="Edm.String" />
+        <Property Name="hireTypeCode" Type="Edm.String" />
+        <Property Name="standardPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="overtimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="doubleTimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="overtimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="doubleTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="payPeriod" Type="Edm.String" />
+        <Property Name="markupPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="isReplacement" Type="Edm.Boolean" />
+        <Property Name="replacementName" Type="Edm.String" />
+        <Property Name="jobId" Type="Edm.String" />
+        <Property Name="contractTypeCode" Type="Edm.String" />
+        <Property Name="clearanceCode" Type="Edm.String" />
+        <Property Name="clientInstructions" Type="Edm.String" />
+        <Property Name="exclusivePlacement" Type="Edm.Int16" />
+        <Property Name="placementFee" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="conversionFee" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="minPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="maxPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="perDiemType" Type="Edm.String" />
+        <Property Name="perDiemPay" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="perDiemBill" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="perDiemStartDate" Type="Edm.DateTimeOffset" />
+        <Property Name="travelPay" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="travelBill" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayStandardPay" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayOvertimePay" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayDoubleTimePay" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayStandardBill" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayOvertimeBill" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayDoubleTimeBill" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="finalDispositionCode" Type="Edm.String" />
+        <Property Name="currencyCode" Type="Edm.Int32" />
+        <Property Name="isExempt" Type="Edm.Boolean" />
+        <Property Name="internalPlacement" Type="Edm.Boolean" />
+        <Property Name="burdenPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="eeoPlanNum" Type="Edm.Int32" />
+        <Property Name="eeoCode" Type="Edm.String" />
+        <Property Name="purchaseOrderNum" Type="Edm.Int16" />
+        <Property Name="overfillAmount" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="businessNum" Type="Edm.Int32" />
+        <Property Name="dateReceived" Type="Edm.DateTimeOffset" />
+        <Property Name="datePosted" Type="Edm.DateTimeOffset" />
+        <Property Name="dateOpened" Type="Edm.DateTimeOffset" />
+        <Property Name="dateClosed" Type="Edm.DateTimeOffset" />
+        <Property Name="repNum" Type="Edm.Int32" />
+        <Property Name="repFirstName" Type="Edm.String" />
+        <Property Name="repLastName" Type="Edm.String" />
+        <Property Name="contactNum" Type="Edm.Int32" />
+        <Property Name="branchNum" Type="Edm.Int32" />
+        <Property Name="branchDesc" Type="Edm.String" />
+        <Property Name="categoryDesc" Type="Edm.String" />
+        <Property Name="groupNum" Type="Edm.Int32" />
+        <Property Name="groupDesc" Type="Edm.String" />
+        <Property Name="statusCode" Type="Edm.String" />
+        <Property Name="statusDesc" Type="Edm.String" />
+        <Property Name="statusDate" Type="Edm.DateTimeOffset" />
+        <Property Name="requiredDegreeDesc" Type="Edm.String" />
+        <Property Name="workShip" Type="Edm.String" />
+        <Property Name="titleCode" Type="Edm.String" />
+        <Property Name="clearanceDesc" Type="Edm.String" />
+        <Property Name="contractTypeDesc" Type="Edm.String" />
+        <Property Name="finalDispositionDesc" Type="Edm.String" />
+        <Property Name="createdDate" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="grossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="latitude" Type="Edm.Double" />
+        <Property Name="longitude" Type="Edm.Double" />
+        <Property Name="requiredApproval" Type="Edm.Int32" />
+        <Property Name="approverNum1" Type="Edm.Int32" />
+        <Property Name="approverStatus1" Type="Edm.Int32" />
+        <Property Name="approverDate1" Type="Edm.DateTimeOffset" />
+        <Property Name="approverNum2" Type="Edm.Int32" />
+        <Property Name="approverStatus2" Type="Edm.Int32" />
+        <Property Name="approverDate2" Type="Edm.DateTimeOffset" />
+        <Property Name="approverNum3" Type="Edm.Int32" />
+        <Property Name="approverStatus3" Type="Edm.Int32" />
+        <Property Name="approverDate3" Type="Edm.DateTimeOffset" />
+        <Property Name="approverNum4" Type="Edm.Int32" />
+        <Property Name="approverNum5" Type="Edm.Int32" />
+        <Property Name="approverStatus4" Type="Edm.Int32" />
+        <Property Name="approverStatus5" Type="Edm.Int32" />
+        <Property Name="approverDate4" Type="Edm.DateTimeOffset" />
+        <Property Name="approverDate5" Type="Edm.DateTimeOffset" />
+        <Property Name="eeoDesc" Type="Edm.String" />
+        <Property Name="needsAssistance" Type="Edm.String" />
+        <Property Name="assistanceRequestDate" Type="Edm.DateTimeOffset" />
+        <Property Name="vendorStandardRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorOvertimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorDoubleTimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorPerDiemRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorTravelRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="creditCheckNum" Type="Edm.Int32" />
+        <Property Name="creditCheckRequired" Type="Edm.Int32" />
+        <Property Name="linkedDealNum" Type="Edm.Int32" />
+        <Property Name="fte" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayStandardRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayOvertimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayDoubleTimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="jobAddress1" Type="Edm.String" />
+        <Property Name="reportsToContactNum" Type="Edm.Int32" />
+        <Property Name="overtimeOver8hrs" Type="Edm.String" />
+        <Property Name="overtimeOver40hrs" Type="Edm.String" />
+        <Property Name="hasReferralBonus" Type="Edm.String" />
+        <Property Name="referralBonusAmount" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="expirationDate" Type="Edm.DateTimeOffset" />
+        <Property Name="offerRelocation" Type="Edm.String" />
+        <Property Name="relocationAmount" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="anticipatedEndOfAssignment" Type="Edm.DateTimeOffset" />
+        <Property Name="billingAddress1" Type="Edm.String" />
+        <Property Name="billingAddress2" Type="Edm.String" />
+        <Property Name="billingCity" Type="Edm.String" />
+        <Property Name="billingState" Type="Edm.String" />
+        <Property Name="billingPostalCode" Type="Edm.String" />
+        <Property Name="billingCountry" Type="Edm.String" />
+        <Property Name="billingContactName" Type="Edm.String" />
+        <Property Name="employeesSupervised" Type="Edm.String" />
+        <Property Name="billingEmail" Type="Edm.String" />
+        <Property Name="billingInstructions" Type="Edm.String" />
+        <Property Name="masterCategoryNum" Type="Edm.Int32" />
+        <Property Name="masterCategoryDesc" Type="Edm.String" />
+        <Property Name="hoursPerWeek" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="likelihoodWillClosePercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weightedValue" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="gmForecastValue" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="forecastDuration" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="estimatedWeeklyHours" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="jobPriority" Type="Edm.Int32" />
+        <Property Name="jobLengthInWeeks" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="estimatedTotalHours" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="billPeriod" Type="Edm.String" />
+        <Property Name="hourlyOrderValue" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyOrderValue" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalOrderValue" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyCosWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyCosWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalCosWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyCosOther" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyCosOther" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalCosOther" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalProjectExpenses" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="onboardTrakNum" Type="Edm.Int32" />
+        <Property Name="onboardTrakDesc" Type="Edm.String" />
+        <Property Name="hireTrakNum" Type="Edm.Int32" />
+        <Property Name="hireTrakDesc" Type="Edm.String" />
+        <Property Name="externalTitle" Type="Edm.String" />
+        <Property Name="quickbookId" Type="Edm.String" />
+        <Property Name="isInternalPlacement" Type="Edm.String" />
+        <Property Name="allowTelecommute" Type="Edm.String" />
+        <Property Name="hubspotId" Type="Edm.String" />
+        <Property Name="onboardedUserNum" Type="Edm.Int32" />
+        <Property Name="onboarderFirstName" Type="Edm.String" />
+        <Property Name="onboarderLastName" Type="Edm.String" />
+        <Property Name="jobTimezoneNum" Type="Edm.Int32" />
+        <Property Name="specialInstructions" Type="Edm.String" />
+        <Property Name="excludeForLinkedIn" Type="Edm.Boolean" />
+        <Property Name="excludeForMonster" Type="Edm.Boolean" />
+        <Property Name="excludeForGlassDoor" Type="Edm.Boolean" />
+        <Property Name="excludeForSimplyHired" Type="Edm.Boolean" />
+      </EntityType>
+      <EntityType Name="OfferResponse">
+        <Key>
+          <PropertyRef Name="idNum" />
+        </Key>
+        <Property Name="idNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="activityDate" Type="Edm.DateTimeOffset" />
+        <Property Name="businessNum" Type="Edm.Int32" />
+        <Property Name="candidateNum" Type="Edm.Int32" />
+        <Property Name="contactNum" Type="Edm.Int32" />
+        <Property Name="jobNum" Type="Edm.Int32" />
+        <Property Name="jobDetailNum" Type="Edm.Int32" />
+        <Property Name="recruiterNum" Type="Edm.Int32" />
+        <Property Name="jobTitle" Type="Edm.String" />
+        <Property Name="jobOpenDate" Type="Edm.DateTimeOffset" />
+        <Property Name="jobEndDate" Type="Edm.DateTimeOffset" />
+        <Property Name="wasHired" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="candidateFirstName" Type="Edm.String" />
+        <Property Name="candidateLastName" Type="Edm.String" />
+        <Property Name="candidateMiddleName" Type="Edm.String" />
+        <Property Name="candidateEmail" Type="Edm.String" />
+        <Property Name="employeeId" Type="Edm.String" />
+        <Property Name="businessName" Type="Edm.String" />
+        <Property Name="contactFirstName" Type="Edm.String" />
+        <Property Name="contactLastName" Type="Edm.String" />
+        <Property Name="offerDate" Type="Edm.DateTimeOffset" />
+        <Property Name="recruiterFirstName" Type="Edm.String" />
+        <Property Name="recruiterLastName" Type="Edm.String" />
+        <Property Name="anticipatedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="offerAcceptDate" Type="Edm.DateTimeOffset" />
+        <Property Name="createdTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="noteNum" Type="Edm.Int32" />
+        <Property Name="standardPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="doubleTimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="overTimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="doubleTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="overTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="perDiemPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="perDiemBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="travelPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="travelBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="markupPercentage" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hireType" Type="Edm.String" />
+        <Property Name="placementFee" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="conversionFee" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorStandardRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorOvertimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorDoubleTimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorPerDiemRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorTravelRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="exemptFlag" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="internalHire" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="isReplacement" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="replacementName" Type="Edm.String" />
+        <Property Name="currencyNum" Type="Edm.Int32" />
+        <Property Name="holidayStandardPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayOvertimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayDoubleTimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayStandardBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayOvertimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayDoubleTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayOvertimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayStandardBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayDoubleTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="burdenPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="jobLengthInWeeks" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="estimatedTotalHours" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="billPeriod" Type="Edm.String" />
+        <Property Name="hourlyOrderValueOfPlacement" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyOrderValueOfPlacement" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalOrderValueOfPlacement" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyCostOfWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyCostOfWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalCostOfWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyOtherCosts" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyOtherCosts" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalOtherCosts" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="isApproved" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="approver1UserNum" Type="Edm.Int32" />
+        <Property Name="approver1Date" Type="Edm.DateTimeOffset" />
+        <Property Name="approver2UserNum" Type="Edm.Int32" />
+        <Property Name="approver2Date" Type="Edm.DateTimeOffset" />
+        <Property Name="approver3UserNum" Type="Edm.Int32" />
+        <Property Name="approver3Date" Type="Edm.DateTimeOffset" />
+        <Property Name="approver1Message" Type="Edm.String" />
+        <Property Name="approver2Message" Type="Edm.String" />
+        <Property Name="approver3Message" Type="Edm.String" />
+        <Property Name="approver1DocNum" Type="Edm.Int32" />
+        <Property Name="approver2DocNum" Type="Edm.Int32" />
+        <Property Name="approver3DocNum" Type="Edm.Int32" />
+        <Property Name="offerLetterNum" Type="Edm.Int32" />
+      </EntityType>
+      <EntityType Name="ProjectResponse">
+        <Key>
+          <PropertyRef Name="projectNum" />
+        </Key>
+        <Property Name="projectNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="companyNum" Type="Edm.Int32" />
+        <Property Name="contactNum" Type="Edm.Int32" />
+        <Property Name="userNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="groupNum" Type="Edm.Int32" />
+        <Property Name="siteNum" Type="Edm.Int32" />
+        <Property Name="projectTitle" Type="Edm.String" />
+        <Property Name="projectDetails" Type="Edm.String" />
+        <Property Name="projectStartDate" Type="Edm.DateTimeOffset" />
+        <Property Name="projectTargetEndDate" Type="Edm.DateTimeOffset" />
+        <Property Name="projectActualEndDate" Type="Edm.DateTimeOffset" />
+        <Property Name="projectStatusDate" Type="Edm.DateTimeOffset" />
+        <Property Name="projectReceivedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="statusCode" Type="Edm.Int32" />
+        <Property Name="typeCode" Type="Edm.Int32" />
+        <Property Name="finalDispositionCode" Type="Edm.Int32" />
+        <Property Name="comments" Type="Edm.String" />
+        <Property Name="creationDate" Type="Edm.DateTimeOffset" />
+        <Property Name="modifyDate" Type="Edm.DateTimeOffset" />
+        <Property Name="projectTrackNum" Type="Edm.Int32" />
+        <Property Name="projectContactNum" Type="Edm.Int32" />
+        <Property Name="likelihoodPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weightedValue" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalOrderValue" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+      </EntityType>
+      <EntityType Name="ProjectTrakActionResponse">
+        <Key>
+          <PropertyRef Name="actionNum" />
+        </Key>
+        <Property Name="actionNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="actionCode" Type="Edm.String" />
+        <Property Name="actionDate" Type="Edm.DateTimeOffset" />
+        <Property Name="comments" Type="Edm.String" />
+        <Property Name="userNum" Type="Edm.Int32" />
+        <Property Name="projectNum" Type="Edm.Int32" />
+        <Property Name="enterDate" Type="Edm.DateTimeOffset" />
+        <Property Name="noteNum" Type="Edm.Int32" />
+        <Property Name="createdTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="createdByUserNum" Type="Edm.Int32" />
+        <Property Name="modifiedTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedByUserNum" Type="Edm.Int32" />
+        <Property Name="checklistNum" Type="Edm.Int32" />
+      </EntityType>
+      <EntityType Name="NoteResponse">
+        <Key>
+          <PropertyRef Name="idNum" />
+        </Key>
+        <Property Name="idNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="siteNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="authorFirstName" Type="Edm.String" />
+        <Property Name="authorLastName" Type="Edm.String" />
+        <Property Name="entityType" Type="SmartSearch.Core.Enumerations.EntityType" Nullable="false" />
+        <Property Name="entityId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="entityName" Type="Edm.String" />
+        <Property Name="noteTypeCode" Type="Edm.String" />
+        <Property Name="noteType" Type="Edm.String" />
+        <Property Name="noteDate" Type="Edm.DateTimeOffset" />
+        <Property Name="subject" Type="Edm.String" />
+        <Property Name="body" Type="Edm.String" />
+        <Property Name="createdTimestamp" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="modifiedTimestamp" Type="Edm.DateTimeOffset" />
+        <Property Name="emailTo" Type="Edm.String" />
+        <Property Name="emailCc" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="SocialLinkResponse">
+        <Key>
+          <PropertyRef Name="idNum" />
+        </Key>
+        <Property Name="idNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="userNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="entityType" Type="SmartSearch.Core.Enumerations.EntityType" Nullable="false" />
+        <Property Name="entityId" Type="Edm.Int32" Nullable="false" />
+        <Property Name="siteType" Type="SmartSearch.OpenApi.Enums.SiteType" Nullable="false" />
+        <Property Name="url" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="TermResponse">
+        <Key>
+          <PropertyRef Name="termNum" />
+        </Key>
+        <Property Name="termNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="hireNum" Type="Edm.Int32" />
+        <Property Name="candidateNum" Type="Edm.Int32" />
+        <Property Name="businessNum" Type="Edm.Int32" />
+        <Property Name="hiringManagerNum" Type="Edm.Int32" />
+        <Property Name="jobNum" Type="Edm.Int32" />
+        <Property Name="jobDetailNum" Type="Edm.Int32" />
+        <Property Name="userNum" Type="Edm.Int32" />
+        <Property Name="terminationDate" Type="Edm.DateTimeOffset" />
+        <Property Name="startDate" Type="Edm.DateTimeOffset" />
+        <Property Name="createdDate" Type="Edm.DateTimeOffset" />
+        <Property Name="modifiedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="terminationCode" Type="Edm.Int16" />
+        <Property Name="terminationReason" Type="Edm.String" />
+        <Property Name="markup" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="timeMode" Type="Edm.String" />
+        <Property Name="hiretype" Type="Edm.String" />
+        <Property Name="conversionFee" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="sourcingFee" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorStandardTimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorOvertimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorDoubleTimeRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorPerDiemRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorTravelRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hireDate" Type="Edm.DateTimeOffset" />
+        <Property Name="availableRehireDate" Type="Edm.DateTimeOffset" />
+        <Property Name="poNum" Type="Edm.Int16" />
+        <Property Name="po" Type="Edm.String" />
+        <Property Name="poStartDate" Type="Edm.DateTimeOffset" />
+        <Property Name="poEndDate" Type="Edm.DateTimeOffset" />
+        <Property Name="poLimit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="govid" Type="Edm.String" />
+        <Property Name="candidateDateOfBirth" Type="Edm.DateTimeOffset" />
+        <Property Name="candidateFirstName" Type="Edm.String" />
+        <Property Name="candidateLastName" Type="Edm.String" />
+        <Property Name="candidateMiddleName" Type="Edm.String" />
+        <Property Name="candidateAddress1" Type="Edm.String" />
+        <Property Name="candidateAddress2" Type="Edm.String" />
+        <Property Name="candidateCity" Type="Edm.String" />
+        <Property Name="candidateState" Type="Edm.String" />
+        <Property Name="candidatePostalcode" Type="Edm.String" />
+        <Property Name="candidateCountry" Type="Edm.String" />
+        <Property Name="candidateHomePhone" Type="Edm.String" />
+        <Property Name="candidateCellPhone" Type="Edm.String" />
+        <Property Name="candidateEmail" Type="Edm.String" />
+        <Property Name="candidateAlternateEmail" Type="Edm.String" />
+        <Property Name="fedMaritalStatus" Type="Edm.String" />
+        <Property Name="fedFilingExemptions" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="stateMaritalStatus" Type="Edm.String" />
+        <Property Name="stateFilingExemptions" Type="Edm.Decimal" Nullable="false" Scale="Variable" />
+        <Property Name="stateAdditionalWithholding" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="fedAdditionalWithholding" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="internalHire" Type="Edm.Int32" />
+        <Property Name="exemptFlag" Type="Edm.String" />
+        <Property Name="replacementFlag" Type="Edm.String" />
+        <Property Name="replacementName" Type="Edm.String" />
+        <Property Name="currencyNum" Type="Edm.Int32" />
+        <Property Name="currency" Type="Edm.String" />
+        <Property Name="timeCardApproverContactNum" Type="Edm.Int32" />
+        <Property Name="holidayStandardPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayOvertimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayDoubleTimePayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayStandardBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayOvertimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="holidayDoubleTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayOvertimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayStandardBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="vendorHolidayDoubleTimeBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="burdenPercent" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="allowOver8DailyOvertime" Type="Edm.String" />
+        <Property Name="allowOver40WeeklyOvertime" Type="Edm.String" />
+        <Property Name="allowOnCallDays" Type="Edm.String" />
+        <Property Name="salesTaxRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="eligibleForRehire" Type="Edm.String" />
+        <Property Name="standardVacationPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardVacationBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardOnCallPayRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardOnCallBillRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardVacationVendorRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="standardOnCallVendorRate" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="estimatedHoursPerWeek" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="jobLengthInWeeks" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="isApproved" Type="Edm.String" />
+        <Property Name="estimatedTotalHours" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="billPeriod" Type="Edm.String" />
+        <Property Name="hourlyOrderValueOfPlacement" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyOrderValueOfPlacement" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalOrderValueOfPlacement" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyCostOfWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyCostOfWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalCostOfWages" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyOtherCosts" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyOtherCosts" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalOtherCosts" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossMargin" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="hourlyGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="weeklyGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="totalGrossProfit" Type="Edm.Decimal" Scale="Variable" />
+        <Property Name="rateEffectiveDate" Type="Edm.DateTimeOffset" />
+        <Property Name="over12Doubletime" Type="Edm.String" />
+        <Property Name="paymentReceivedDate" Type="Edm.DateTimeOffset" />
+        <Property Name="invoiceSentDate" Type="Edm.DateTimeOffset" />
+        <Property Name="workSiteNumber" Type="Edm.Int32" />
+        <Property Name="jobTitle" Type="Edm.String" />
+        <Property Name="jobReferenceId" Type="Edm.String" />
+        <Property Name="businessName" Type="Edm.String" />
+        <Property Name="contactFirstName" Type="Edm.String" />
+        <Property Name="contactLastName" Type="Edm.String" />
+        <Property Name="contactTitle" Type="Edm.String" />
+        <Property Name="recruitedByFirstName" Type="Edm.String" />
+        <Property Name="recruitedByLastName" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="UserResponse">
+        <Key>
+          <PropertyRef Name="userNum" />
+        </Key>
+        <Property Name="userNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="groupNum" Type="Edm.Int32" />
+        <Property Name="groupList" Type="Edm.String" />
+        <Property Name="siteNum" Type="Edm.Int32" />
+        <Property Name="userId" Type="Edm.String" />
+        <Property Name="userLevel" Type="Edm.Int16" />
+        <Property Name="lastName" Type="Edm.String" />
+        <Property Name="firstName" Type="Edm.String" />
+        <Property Name="middleInitial" Type="Edm.String" />
+        <Property Name="email" Type="Edm.String" />
+        <Property Name="address1" Type="Edm.String" />
+        <Property Name="address2" Type="Edm.String" />
+        <Property Name="address3" Type="Edm.String" />
+        <Property Name="city" Type="Edm.String" />
+        <Property Name="state" Type="Edm.String" />
+        <Property Name="zipCode" Type="Edm.String" />
+        <Property Name="country" Type="Edm.String" />
+        <Property Name="reportLevel" Type="Edm.Int16" />
+        <Property Name="reportsToUserNum" Type="Edm.Int32" />
+        <Property Name="title" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="WebHookResponse">
+        <Key>
+          <PropertyRef Name="id" />
+        </Key>
+        <Property Name="id" Type="Edm.Int32" Nullable="false" />
+        <Property Name="eventNum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="clientUrl" Type="Edm.String" Nullable="false" />
+        <Property Name="isActive" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+    </Schema>
+    <Schema Namespace="SmartSearch.OpenApi.Enums" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EnumType Name="MaritalStatusType">
+        <Member Name="Exempt" Value="0" />
+        <Member Name="Single" Value="1" />
+        <Member Name="Married" Value="2" />
+        <Member Name="MarriedAtSingleRate" Value="3" />
+        <Member Name="HeadOfHouseHold" Value="4" />
+        <Member Name="NonResident" Value="5" />
+      </EnumType>
+      <EnumType Name="FieldType">
+        <Member Name="Unknown" Value="0" />
+        <Member Name="GeneralCandidateScreeningQuestions" Value="1" />
+        <Member Name="BusinessProfile" Value="2" />
+        <Member Name="ContactProfile" Value="3" />
+        <Member Name="User" Value="4" />
+        <Member Name="JobProfile" Value="5" />
+        <Member Name="JobApplicationScreeningQuestions" Value="6" />
+        <Member Name="CandidateProfile" Value="10" />
+        <Member Name="Trak" Value="99" />
+      </EnumType>
+      <EnumType Name="FieldFormat">
+        <Member Name="AnyFormat" Value="0" />
+        <Member Name="NumericOnly" Value="1" />
+        <Member Name="TextOnly" Value="2" />
+        <Member Name="DateOnly" Value="3" />
+      </EnumType>
+      <EnumType Name="AnswerType">
+        <Member Name="RadioButtons" Value="0" />
+        <Member Name="DropdownList" Value="1" />
+        <Member Name="OneEntry" Value="2" />
+        <Member Name="TwoEntries" Value="3" />
+        <Member Name="ThreeEntries" Value="4" />
+        <Member Name="FourEntries" Value="5" />
+        <Member Name="FiveEntries" Value="6" />
+        <Member Name="SixEntries" Value="7" />
+        <Member Name="SevenEntries" Value="8" />
+        <Member Name="EightEntries" Value="9" />
+        <Member Name="NineEntries" Value="10" />
+        <Member Name="TenEntries" Value="11" />
+        <Member Name="Essay" Value="12" />
+      </EnumType>
+      <EnumType Name="SiteType">
+        <Member Name="LinkedIn" Value="0" />
+        <Member Name="Facebook" Value="1" />
+        <Member Name="Twitter" Value="2" />
+      </EnumType>
+    </Schema>
+    <Schema Namespace="SmartSearch.Core.Enumerations" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EnumType Name="EntityType">
+        <Member Name="Unknown" Value="0" />
+        <Member Name="Candidate" Value="1" />
+        <Member Name="Business" Value="2" />
+        <Member Name="Contact" Value="3" />
+        <Member Name="User" Value="4" />
+        <Member Name="Job" Value="5" />
+      </EnumType>
+    </Schema>
+    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="Container">
+        <EntitySet Name="applicants" EntityType="SmartSearch.OpenApi.Models.JobApplicantResponse">
+          <NavigationPropertyBinding Path="candidate" Target="candidates" />
+          <NavigationPropertyBinding Path="job" Target="jobs" />
+        </EntitySet>
+        <EntitySet Name="businesses" EntityType="SmartSearch.OpenApi.Models.BusinessResponse" />
+        <EntitySet Name="calllists" EntityType="SmartSearch.OpenApi.Models.CallListResponse" />
+        <EntitySet Name="candidates" EntityType="SmartSearch.OpenApi.Models.CandidateResponse" />
+        <EntitySet Name="candidateTrakActions" EntityType="SmartSearch.OpenApi.Models.CandidateTrakActionResponse" />
+        <EntitySet Name="contacts" EntityType="SmartSearch.OpenApi.Models.ContactResponse" />
+        <EntitySet Name="customFields" EntityType="SmartSearch.OpenApi.Models.CustomFieldResponse" />
+        <EntitySet Name="documents" EntityType="SmartSearch.OpenApi.Models.DocumentResponse" />
+        <EntitySet Name="hires" EntityType="SmartSearch.OpenApi.Models.HireResponse" />
+        <EntitySet Name="hireTrakActions" EntityType="SmartSearch.OpenApi.Models.TrakActionResponse" />
+        <EntitySet Name="jobs" EntityType="SmartSearch.OpenApi.Models.JobResponse" />
+        <EntitySet Name="offers" EntityType="SmartSearch.OpenApi.Models.OfferResponse" />
+        <EntitySet Name="projects" EntityType="SmartSearch.OpenApi.Models.ProjectResponse" />
+        <EntitySet Name="projectTrakActions" EntityType="SmartSearch.OpenApi.Models.ProjectTrakActionResponse" />
+        <EntitySet Name="notes" EntityType="SmartSearch.OpenApi.Models.NoteResponse" />
+        <EntitySet Name="onboardTrakActions" EntityType="SmartSearch.OpenApi.Models.TrakActionResponse" />
+        <EntitySet Name="socialLinks" EntityType="SmartSearch.OpenApi.Models.SocialLinkResponse" />
+        <EntitySet Name="terms" EntityType="SmartSearch.OpenApi.Models.TermResponse" />
+        <EntitySet Name="users" EntityType="SmartSearch.OpenApi.Models.UserResponse" />
+        <EntitySet Name="webhooks" EntityType="SmartSearch.OpenApi.Models.WebHookResponse" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

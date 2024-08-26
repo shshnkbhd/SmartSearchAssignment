@@ -1,0 +1,55 @@
+﻿@page "/"
+@page "/candidates"
+@rendermode InteractiveServer
+
+@using ODataService
+@using SmartSearch.OpenApi.Models
+
+@inject CandidatesService candidatesService
+
+<h3>Candidates</h3>
+
+<input id="zipCode" @bind="zipCode" />
+
+<button class="btn btn-primary" @onclick="FetchCandidates">Search</button>
+
+@if(CandidateList?.Any() == true) {
+    
+<table>
+        <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        </tr>
+        @foreach(var candidate in CandidateList) {
+            <tr>
+            <td>
+                @candidate.CandidateFirstName
+            </td>
+            <td>
+                @candidate.CandidateLastName
+            </td>
+        </tr>
+        }
+    
+    </table>
+} else if (searchInProgress) {
+    <div>Searching for candidates. Please wait...</div>
+} else {
+    <div>Please provide a zip code to search for candidates</div>
+}
+
+
+@code {
+    private string zipCode = "44143";
+    private bool searchInProgress = false;
+
+    private IEnumerable<CandidateResponse> CandidateList;
+
+
+    private async void FetchCandidates() {
+        searchInProgress = true;
+        CandidateList = await candidatesService.GetCandidatesByZipCode(zipCode);
+        searchInProgress = false;
+        StateHasChanged();
+    }
+}
